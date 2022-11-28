@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <path id="bbzm0rr45b" d="M8 8H14.545V14.545H8z"/>
+        <path id="2yxwadqfrc" d="M17.455 8H24V14.545H17.455z"/>
+        <path id="oq0ryav1id" d="M8 17.455H14.545V24H8z"/>
+        <rect id="m5psiv3nca" width="40" height="40" x="0" y="0" rx="8"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g transform="translate(-285 -522) translate(253 498) translate(32 24)">
+                        <use fill="#FFF" xlink:href="#m5psiv3nca"/>
+                        <rect width="39" height="39" x=".5" y=".5" fill="#CCE4FF" stroke="#CCE4FF" stroke-linejoin="square" rx="8"/>
+                    </g>
+                    <path fill="#FFF" d="M28 36c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z" transform="translate(-285 -522) translate(253 498) translate(32 24)"/>
+                    <g transform="translate(-285 -522) translate(253 498) translate(32 24)">
+                        <use fill="#CCE4FF" xlink:href="#bbzm0rr45b"/>
+                        <use fill="#FFF" xlink:href="#bbzm0rr45b"/>
+                    </g>
+                    <g transform="translate(-285 -522) translate(253 498) translate(32 24)">
+                        <use fill="#CCE4FF" xlink:href="#2yxwadqfrc"/>
+                        <use fill="#FFF" xlink:href="#2yxwadqfrc"/>
+                    </g>
+                    <g transform="translate(-285 -522) translate(253 498) translate(32 24)">
+                        <use fill="#CCE4FF" xlink:href="#oq0ryav1id"/>
+                        <use fill="#FFF" xlink:href="#oq0ryav1id"/>
+                    </g>
+                    <path fill="#007AFF" fill-rule="nonzero" stroke="#007AFF" stroke-width=".2" d="M32.167 27.167h-3.334v-3.334c0-.46-.372-.833-.833-.833-.46 0-.833.373-.833.833v3.334h-3.334c-.46 0-.833.372-.833.833 0 .46.373.833.833.833h3.334v3.334c0 .46.373.833.833.833.46 0 .833-.373.833-.833v-3.334h3.334c.46 0 .833-.372.833-.833 0-.46-.373-.833-.833-.833z" transform="translate(-285 -522) translate(253 498) translate(32 24)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

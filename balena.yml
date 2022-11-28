@@ -1,0 +1,26 @@
+name: Labs Project Template
+description: >-
+  Labs Project Template
+joinable: false
+# By default post-provisioning is overwritten by the deploy-to-balena GitHub action to match README.md
+post-provisioning: Click 'View code' to see the README.
+type: sw.application
+assets:
+  repository:
+    type: blob.asset
+    data:
+      url: "https://github.com/balenaLabs/project-template"
+  logo:
+    type: blob.asset
+    data:
+      url: 'https://github.com/balenaLabs/project-template/main/logo.svg'
+data:
+  defaultDeviceType: raspberrypi4-64
+  supportedDeviceTypes:
+    - raspberry-pi
+    - raspberry-pi2
+    - raspberrypi3
+    - raspberrypi3-64
+    - raspberrypi4-64
+    - intel-nuc
+    - genericx86-64-ext
