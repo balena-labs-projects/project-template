@@ -6,7 +6,7 @@ Setting up this template requires the following steps:
 
 ## 1. Initial setup
 
-1. Click `Use this template` from the top of the page.
+1. Click `Use this template` from the top of the page. When naming your repository, use the Labs project repository naming convention of all lowercase and `-` to separate words.
 2. Configure the basic GitHub files relevant to your setup and code language, such as `.gitignore` and `.dockerignore`.
 3. Replace `docker-compose.yml` and `Dockerfile` with your own.
 4. Replace `logo.svg` with your own custom logo to display on the Balena Hub. If you are using a different image format, update the filename in `balena.yml` accordingly.
