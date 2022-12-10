@@ -6,7 +6,7 @@ on:
       - "ghcr"
 
 env:
-  GHCR_IMAGE_NAME: balena-labs-research/project-template
+  GHCR_IMAGE_NAME: balena-labs-projects/project-template
   REGISTRY: ghcr.io
 
 jobs:

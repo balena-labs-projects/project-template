@@ -11,7 +11,7 @@ Setting up this template requires the following steps:
 3. Replace `docker-compose.yml` and `Dockerfile` with your own.
 4. Replace `logo.svg` with your own custom logo to display on the Balena Hub. If you are using a different image format, update the filename in `balena.yml` accordingly.
 5. Update `balena.yml` with your project details, paying attention to the URLs to ensure they reflect your project paths. `post-provisioning` is handled automatically by a GitHub action, mirroring the GitHub README.md file and can be ignored.
-6. If not using tags to trigger deploys, you can set `sync_tag: false` on the `balena.yml Action` inputs in `.github/workflows/deploy-to-balena.yml` to prevent matching the version shown on Balena Hub with with the semver tag pushed to GitHub.
+6. If not using tags to trigger GitHub actions, you should set `sync_tag: false` in `.github/workflows/deploy-to-balena.yml`.
 
 ## 2. Configure the documentation
 
@@ -33,7 +33,7 @@ DOCS_PATH="../docs" npm start --prefix labs-docs-builder
 
 A browser window will open and display how your docs will look when deployed. Changes made to the files in `docs` will be seen in realtime.
 
-Sidebars are generated automatically based on the file and folder names inside the `docs` folder.
+Sidebars are generated automatically based on the folder names inside the `docs` folder.
 
 To change the order of items in the sidebars amend the section at the top of each file to specify where it should be in the list:
 
@@ -66,14 +66,14 @@ By default `BALENA_API_KEY` is used from the org wide GitHub secrets. If you are
 
 ## 4. Deploy to GitHub Container Registry
 
-To build and deploy Docker images to the GitHub container registry, configure the `GHCR_IMAGE_NAME` environment variable in `.github/workflows/deploy-to-ghcr.yml`
+To build and deploy Docker images to the GitHub Container Registry, configure the `GHCR_IMAGE_NAME` environment variable in `.github/workflows/deploy-to-ghcr.yml`
 
 ```
 env:
-    GHCR_IMAGE_NAME: balena-labs-research/project-template
+    GHCR_IMAGE_NAME: balena-labs-projects/project-template
 ```
 
-Then push the tag `ghcr` to begin a build and deploy.
+Then push the tag `ghcr` alongside your semver tag to begin a build and deploy. Note that the `ghcr` tag and semver tag (i.e. `0.0.1`) must be submitted at the same time on the same commit for the GitHub Container Registry build to work as the Container Registry uses the semver tag to tag the Docker image.
 
 ## 5. Delete this README content
 
