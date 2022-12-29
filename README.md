@@ -46,6 +46,10 @@ Static assets such as images go in `docs/static` and can be referenced as `/your
 
 To replace the default header image include your own in `docs/static` called `primary-header-logo.png`.
 
+In the absence of a `primary-header-logo.png` file, the logo specified in your `balena.yml` will be used as a fallback. If you do not have a logo specified or do not have a `balena.yml` file, then it will revert to no logo.
+
+To add a favicon, include your own in `docs/static` called `favicon.ico`.
+
 Documentation will deploy automatically on every doc amendment pushed to the main or master branches.
 
 ## 3. Deploy to Balena
