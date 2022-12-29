@@ -18,7 +18,7 @@ jobs:
       - name: Checkout main branch
         uses: actions/checkout@v3
 
-      - name: Build and deploy Labs docs
+      - name: Build and deploy the docs
         uses: "balena-io-experimental/labs-docs-builder@main"
         with:
           git_pass: ${{ secrets.github_token }}
