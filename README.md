@@ -1,23 +1,22 @@
-# Balena Labs Project Template
+# Balena Project Template
 
-This repository constitutes the key components required for creating a new Balena Labs project. It aims to help standardise the project repos, and act as a quick and easy way to deploy a new project with all the required actions and documentation.
+This repository constitutes some key components required for creating a new Balena project. It acts as a quick and easy way to get started building and deploying a new project with all the required GitHub actions and documentation.
 
 Setting up this template requires the following steps:
 
 ## 1. Initial setup
 
-1. Click `Use this template` from the top of the page. When naming your repository, use the Labs project repository naming convention of all lowercase and `-` to separate words.
+1. Click `Use this template` from the top of the page.
 2. Configure the basic GitHub files relevant to your setup and code language, such as `.gitignore` and `.dockerignore`.
 3. Replace `docker-compose.yml` and `Dockerfile` with your own.
 4. Replace `logo.svg` with your own custom logo to display on the Balena Hub. If you are using a different image format, update the filename in `balena.yml` accordingly.
 5. Update `balena.yml` with your project details, paying attention to the URLs to ensure they reflect your project paths. `post-provisioning` is handled automatically by a GitHub action, mirroring the GitHub README.md file and can be ignored.
-6. If not using tags to trigger GitHub actions, you should set `sync_tag: false` in `.github/workflows/deploy-to-balena.yml`.
 
 ## 2. Configure the documentation
 
 If docs are not required, simply delete the `docs` folder. You could also delete the `deploy-docs.yml` action if you wish, but it isn't necessary as it only triggers when the `docs` folder exists and when changes are made inside the folder.
 
-If you do require docs, Labs themed docs will be built and deployed to a branch called `gh_pages`. From there, the docs can be published to GitHub pages by selecting the `Deploy from a branch` mode in `Settings -> Pages`, choosing the `gh_pages` branch and `/` as the source folder.
+If you keep the docs they will be built and deployed to a branch called `gh_pages`. From there, the docs can be published to GitHub pages by selecting the `Deploy from a branch` mode in `Settings -> Pages`, choosing the `gh_pages` branch and `/` as the source folder.
 
 ### Getting started with developing your project docs
 
@@ -55,14 +54,10 @@ To deploy to Balena Hub, specify the app name in `.github/workflows/deploy-to-ba
 
 ```
 env:
-  BALENA_APP: maggie0002/test-block
+  BALENA_APP: maggie0002/test-fleet
 ```
 
-Finally, push a tag to the repository in semver format (i.e. `0.0.1`) to trigger a deployment.
-
-> Tags are the recommended means of pushing builds, as the default `deploy-to-balena-action` action requires accessing a GitHub secret that is only available when creating a PR from a branch on the GitHub repository. Users looking to contribute by creating PRs from forks will experiences errors about the `BALENA_TOKEN` being missing. Labs is seeking community contribution and ownership of projects, making these barriers significant.
-
-By default `BALENA_API_KEY` is used from the org wide GitHub secrets. If you are not using the default deploy mechanisms and need a custom API key, replace `BALENA_API_KEY` in `.github/workflows/deploy-to-balena.yml` with your own secret.
+By default `BALENA_API_KEY` is used from the org wide GitHub secrets. If you are not using the default deploy mechanisms for your GitHub Org and need a custom API key then replace `BALENA_API_KEY` in `.github/workflows/deploy-to-balena.yml` with your own secret or add a secret at the [GitHub repo level](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
 
 ## 4. Deploy to GitHub Container Registry
 
@@ -73,7 +68,7 @@ env:
     GHCR_IMAGE_NAME: balena-labs-projects/project-template
 ```
 
-Then push the tag `ghcr` alongside your semver tag to begin a build and deploy. Note that the `ghcr` tag and semver tag (i.e. `0.0.1`) must be submitted at the same time on the same commit for the GitHub Container Registry build to work as the Container Registry uses the semver tag to tag the Docker image.
+Then push the tag `ghcr` alongside a semver tag to begin a build and deploy. Note that the `ghcr` tag and semver tag (i.e. `0.0.1`) must be submitted at the same time on the same commit for the GitHub Container Registry build to work as the Container Registry uses the semver tag to tag the Docker image.
 
 ## 5. Delete this README content
 
