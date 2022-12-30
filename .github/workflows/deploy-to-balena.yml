@@ -8,7 +8,6 @@ on:
       - master
     paths-ignore:
       - 'docs/**'
-      - README.md
 
 env:
   BALENA_APP: maggie0002/test-fleet
