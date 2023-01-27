@@ -34,14 +34,6 @@ A browser window will open and display how your docs will look when deployed. Ch
 
 Sidebars are generated automatically based on the folder names inside the `docs` folder.
 
-To change the order of items in the sidebars amend the section at the top of each file to specify where it should be in the list:
-
-```
----
-sidebar_position: 1
----
-```
-
 Static assets such as images go in `docs/static` and can be referenced as `/your-asset.jpeg` in the docs.
 
 To replace the default header image include your own in `docs/static` called `primary-header-logo.png`.
@@ -51,6 +43,8 @@ In the absence of a `primary-header-logo.png` file, the logo specified in your `
 To add a favicon, include your own in `docs/static` called `favicon.ico`.
 
 Documentation will deploy automatically on every doc amendment pushed to the main or master branches.
+
+See the [docusaurus](http://docusaurus.io) docs for more info.
 
 ## 3. Deploy to Balena
 
@@ -65,14 +59,7 @@ By default `BALENA_API_KEY` is used from the org wide GitHub secrets. If you are
 
 ## 4. Deploy to GitHub Container Registry
 
-To build and deploy Docker images to the GitHub Container Registry, configure the `GHCR_IMAGE_NAME` environment variable in `.github/workflows/deploy-to-ghcr.yml`
-
-```
-env:
-    GHCR_IMAGE_NAME: balena-labs-projects/project-template
-```
-
-Then push the tag `ghcr` alongside a semver tag to begin a build and deploy. Note that the `ghcr` tag and semver tag (i.e. `0.0.1`) must be submitted at the same time on the same commit for the GitHub Container Registry build to work as the Container Registry uses the semver tag to tag the Docker image.
+To build and deploy Docker images to the GitHub Container Registry push a semver tag (e.g. `0.0.1`) on the main branch to begin a build and deploy of multi-architecture images.
 
 ## 5. Delete this README content
 
